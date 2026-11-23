@@ -1,0 +1,9 @@
+{
+    "name": "Net Example",
+    "entry_script": "scripts/main.py",
+    "window_width": 480,
+    "window_height": 320,
+    "target_fps": 60,
+    "libraries": ["../../libraries/net"],
+    "desktop_libraries": ["../../libraries/net"]
+}

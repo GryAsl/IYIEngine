@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Merged only when release.json android.play_games_app_id is set (app/build.gradle.kts); an
+     unconfigured build has no games APP_ID meta-data, so Play Games stays off (engine.play). -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/iyi_games_app_id" />  <!-- a string ref: a numeric literal would be stored as a number -->
+    </application>
+</manifest>

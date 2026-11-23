@@ -1,0 +1,68 @@
+{
+ "civilian": {
+  "kind": "foot",
+  "speed": 1.3,
+  "run": 3.6,
+  "radius": 0.3
+ },
+ "infantry": {
+  "kind": "foot",
+  "speed": 1.5,
+  "run": 4.2,
+  "radius": 0.35
+ },
+ "car": {
+  "kind": "wheeled",
+  "speed": 15.0,
+  "accel": 2.8,
+  "brake": 7.5,
+  "length": 4.4,
+  "width": 1.8,
+  "turn": 5.5
+ },
+ "pickup": {
+  "kind": "wheeled",
+  "speed": 15.0,
+  "accel": 2.6,
+  "brake": 7.0,
+  "length": 5.2,
+  "width": 1.9,
+  "turn": 6.0
+ },
+ "truck": {
+  "kind": "wheeled",
+  "speed": 12.0,
+  "accel": 1.4,
+  "brake": 5.5,
+  "length": 7.6,
+  "width": 2.5,
+  "turn": 9.0
+ },
+ "apc": {
+  "kind": "wheeled",
+  "speed": 13.0,
+  "accel": 1.9,
+  "brake": 6.5,
+  "length": 6.9,
+  "width": 2.8,
+  "turn": 8.0
+ },
+ "tank": {
+  "kind": "tracked",
+  "speed": 10.0,
+  "accel": 1.3,
+  "brake": 6.0,
+  "length": 7.7,
+  "width": 3.6,
+  "turn": 0.0
+ },
+ "heli": {
+  "kind": "air",
+  "speed": 55.0,
+  "accel": 6.0,
+  "climb": 7.0,
+  "length": 15.0,
+  "width": 3.0,
+  "pad": 11.0
+ }
+}

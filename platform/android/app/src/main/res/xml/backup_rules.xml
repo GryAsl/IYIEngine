@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 6-11 Auto Backup: saves and settings yes, extracted Python stdlib no. -->
+<full-backup-content>
+    <exclude domain="file" path="python/" />
+    <exclude domain="file" path="python.staging/" />
+</full-backup-content>

@@ -1,0 +1,48 @@
+{
+  "3.14": {
+    "windows": {
+      "version": "3.14.8",
+      "url": "https://www.python.org/ftp/python/3.14.8/python-3.14.8-embed-amd64.zip",
+      "sha256": "a93abe456ab01bd96d7a085b3cdb6566b3063f4241360d114142fbdb07f0a310",
+      "pylib": "python314.dll",
+      "stdlib": "python314.zip"
+    },
+    "linux": {
+      "version": "3.14.8",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.14.8%2B20261003-x86_64-unknown-linux-gnu-install_only.tar.gz",
+      "sha256": "371b6c281bbb09b29279e9e3a2996bab4ae2ea03cca52bf869f8bd89286b0ae8",
+      "pylib": "libpython3.14.so.1.0",
+      "stdlib": "lib/python3.14"
+    },
+    "macos": {
+      "version": "3.14.8",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.14.8%2B20261003-aarch64-apple-darwin-install_only.tar.gz",
+      "sha256": "d15291f940cfecd2e54010d5e37d2e03aa192f076a65d26ab741372fff2dabfe",
+      "pylib": "libpython3.14.dylib",
+      "stdlib": "lib/python3.14"
+    }
+  },
+  "3.11": {
+    "windows": {
+      "version": "3.11.9",
+      "url": "https://www.python.org/ftp/python/3.11.9/python-3.11.9-embed-amd64.zip",
+      "sha256": "009d6bf7e3b2ddca3d784fa09f90fe54336d5b60f0e0f305c37f400bf83cfd3b",
+      "pylib": "python311.dll",
+      "stdlib": "python311.zip"
+    },
+    "linux": {
+      "version": "3.11.9",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20240415/cpython-3.11.9%2B20240415-x86_64-unknown-linux-gnu-install_only.tar.gz",
+      "sha256": "78b1c16a9fd032997ba92a60f46a64f795cd18ff335659dfdf6096df277b24d5",
+      "pylib": "libpython3.11.so.1.0",
+      "stdlib": "lib/python3.11"
+    },
+    "macos": {
+      "version": "3.11.9",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20240415/cpython-3.11.9%2B20240415-aarch64-apple-darwin-install_only.tar.gz",
+      "sha256": "7af7058f7c268b4d87ed7e08c2c7844ef8460863b3e679db3afdce8bb1eedfae",
+      "pylib": "libpython3.11.dylib",
+      "stdlib": "lib/python3.11"
+    }
+  }
+}

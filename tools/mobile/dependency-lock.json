@@ -1,0 +1,46 @@
+{
+  "$comment": "Pinned mobile toolchain and target artifacts (docs/mobile/plan/02 B, 05 C). Change a pin only on purpose; release builds check sha256 where given.",
+  "recorded": "2026-11-15",
+  "host": {
+    "jdk": {"id": "Microsoft.OpenJDK.17", "version": "17.0.21.21"},
+    "gradle": {"version": "9.5.0", "url": "https://services.gradle.org/distributions/gradle-9.5.0-bin.zip",
+               "sha256": "553c78f50dafcd54d65b9a444649057857469edf836431389695608536d6b746",
+               "wrapper_jar_sha256": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7"},
+    "android_gradle_plugin": "9.3.1",
+    "android_cmdline_tools": "commandlinetools-win-13114758",
+    "android_sdk_packages": ["platform-tools", "platforms;android-36", "build-tools;36.0.0",
+                             "ndk;28.2.13676358", "cmake;3.31.6"]
+  },
+  "android": {
+    "abi": "arm64-v8a",
+    "min_sdk": 24,
+    "target_sdk": 36,
+    "compile_sdk": 36,
+    "ndk": "28.2.13676358",
+    "gles": "3.0",
+    "play": {
+      "play_services_games_v2": "22.1.0",
+      "play_review": "2.0.2",
+      "play_licensing": "vendored: AIDL from github.com/google/play-licensing + SHA1withRSA verify (License.java); no official Maven artifact"
+    },
+    "cpython": {
+      "version": "3.14.7",
+      "url": "https://www.python.org/ftp/python/3.14.7/python-3.14.7-aarch64-linux-android.tar.gz",
+      "sha256": "6d50cc3aa66e414a439594089bcdfb5f1264358155c70c1f00471c24cfb477fb",
+      "libpython_sha256": "ec0b46cd65f228fb2a750303227f83e9e8eed83bbb95dd1b746bff61199907b5",
+      "min_api": 24,
+      "extract_to": "build/deps/python-android (prefix/ = include + lib)"
+    }
+  },
+  "ios": {
+    "deployment_target": "15.6",
+    "raylib_fork": {"repo": "https://github.com/ghera/raylib-iOS", "commit": "da98037", "note": "callbacks ios_ready/ios_update/ios_destroy read from this commit; verify tag and ANGLE pin on the Mac"},
+    "angle": "UNPINNED: pin with the fork release",
+    "cpython": "UNPINNED: Python.xcframework 3.14.x matching android.cpython.version"
+  },
+  "shared": {
+    "raylib": "6.2 (CMake IYI_RAYLIB_VERSION)",
+    "pybind11": "v3.1.0",
+    "nlohmann_json": "v3.12.0"
+  }
+}

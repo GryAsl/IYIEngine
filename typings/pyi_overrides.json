@@ -1,0 +1,69 @@
+{
+    "_comment": "Override manifest for pyi_sync.py. Keys are function names (e.g. 'spawn_actor') or 'engine.ui.func_name'. Add an entry here for any symbol the parser cannot derive.",
+    "_example_func": {
+        "args": [
+            {
+                "name": "path",
+                "type": "str"
+            },
+            {
+                "name": "size",
+                "type": "int",
+                "default": "32"
+            }
+        ],
+        "return": "str | None"
+    },
+    "get_monitor_resolutions": {
+        "args": [],
+        "return": "list[tuple[int, int]]"
+    },
+    "set_postprocess_shader": {
+        "args": [
+            {
+                "name": "shader",
+                "type": "Shader | None"
+            },
+            {
+                "name": "strength",
+                "type": "float",
+                "default": "1.0"
+            },
+            {
+                "name": "radial_warp",
+                "type": "float",
+                "default": "0.0"
+            },
+            {
+                "name": "world_only",
+                "type": "bool",
+                "default": "False"
+            },
+            {
+                "name": "text_mask",
+                "type": "bool",
+                "default": "False"
+            }
+        ],
+        "return": "None"
+    },
+    "set_window_icon": {
+        "args": [
+            {
+                "name": "rel_path",
+                "type": "str"
+            },
+            {
+                "name": "frame",
+                "type": "int",
+                "default": "0"
+            },
+            {
+                "name": "frame_count",
+                "type": "int",
+                "default": "1"
+            }
+        ],
+        "return": "bool"
+    }
+}

@@ -1,0 +1,33 @@
+name: ci
+
+# Public snapshot CI: build the engine on Windows and run the native and tool test suites. No game run:
+# hosted runners have no GPU, so a 120-frame run (`--project tools/web/smoke/engine --frames 120`) is a
+# local check (public_snapshot.py --build), not a CI one.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true   # the video tests read tests/fixtures/*.mpg, which are LFS objects
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Build
+        shell: cmd
+        run: call build.bat
+      - name: Native tests
+        shell: cmd
+        run: build\ninja\IYIEngineTests.exe
+      - name: Tool tests
+        shell: bash   # stops at the first failing test file
+        run: |
+          set -e
+          python -m pip install --quiet pillow   # test_release.py checks the Android launcher icons with Pillow
+          python tools/test_release.py
+          python tools/test_visual_test.py

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loading...</title><!-- InitWindow replaces it with the project name -->
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+  #status { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+            color: #ccc; font: 16px sans-serif; pointer-events: none; white-space: pre-line; }
+</style>
+</head>
+<body>
+<canvas id="canvas" tabindex="-1" oncontextmenu="event.preventDefault()"></canvas>
+<div id="status">Loading...</div>
+<script>
+  var statusEl = document.getElementById('status');
+  var Module = {
+    canvas: document.getElementById('canvas'),
+    print: function (text) { console.log(text); },
+    printErr: function (text) { console.error(text); },
+    // Emscripten reports the download as "Downloading data... (done/total)"; show it as a percentage.
+    setStatus: function (text) {
+      var m = text && text.match(/\((\d+(?:\.\d+)?)\/(\d+)\)/);
+      statusEl.textContent = m ? 'Loading ' + Math.floor(100 * m[1] / m[2]) + '%' : (text || '');
+    },
+    onAbort: function (what) { statusEl.textContent = 'The game stopped: ' + what; },
+    // Started: clear the status and keep it clear (the late fonts download below reports progress too,
+    // and nothing clears it after the start), then fetch the big CJK fonts (fonts_cjk.js, when the game
+    // has them) without holding up the start.
+    onRuntimeInitialized: function () {
+      statusEl.textContent = '';
+      Module.setStatus = function () {};
+      var s = document.createElement('script');
+      s.src = 'fonts_cjk.js';
+      s.onerror = function () { s.remove(); };
+      document.body.appendChild(s);
+    },
+  };
+  // ?smoke=1: the game runs its smoke test (IYI_SMOKE) and logs IYI_WEB_SMOKE_OK / _FAIL. The OK comes
+  // after the late CJK fonts, so text still over the canvas then (a stuck "Loading 100%") fails the run.
+  if (new URLSearchParams(location.search).get('smoke') === '1') {
+    Module.preRun = [function () { ENV.IYI_SMOKE = '1'; }];
+    Module.print = function (text) {
+      if (text.indexOf('IYI_WEB_SMOKE_OK') >= 0 && statusEl.textContent) {
+        text = 'IYI_WEB_SMOKE_FAIL status text left on screen: ' + statusEl.textContent;
+      }
+      console.log(text);
+    };
+  }
+</script>
+<script src="game.js"></script>
+{{{ SCRIPT }}}
+</body>
+</html>

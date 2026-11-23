@@ -1,0 +1,5 @@
+native/build/
+native/bin/*.pyd
+
+# Runtime output, never part of the fixture.
+logs/

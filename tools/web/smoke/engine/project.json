@@ -1,0 +1,9 @@
+{
+    "name": "Web Gate 3",
+    "entry_script": "scripts/main.py",
+    "window_width": 960,
+    "window_height": 540,
+    "window_resizable": true,
+    "target_fps": 0,
+    "hot_reload": false
+}

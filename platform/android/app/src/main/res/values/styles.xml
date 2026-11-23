@@ -1,0 +1,3 @@
+<resources>
+    <style name="IYITheme" parent="android:style/Theme.NoTitleBar.Fullscreen" />
+</resources>

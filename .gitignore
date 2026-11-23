@@ -1,0 +1,16 @@
+build/
+.vs/
+*.user
+__pycache__/
+*.pyc
+out/
+dist/
+third_party/*
+!third_party/.gitkeep
+!third_party/pl_mpeg/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# repomix repo dumps (generated; kept on disk, never committed).
+*repomix-output.*

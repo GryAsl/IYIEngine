@@ -1,0 +1,9 @@
+{
+    "name": "Native Example",
+    "entry_script": "scripts/main.py",
+    "window_width": 320,
+    "window_height": 240,
+    "target_fps": 60,
+    "hot_reload": false,
+    "native": ["native/bin"]
+}
